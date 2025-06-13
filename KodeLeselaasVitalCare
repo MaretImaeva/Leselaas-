@@ -94,17 +94,20 @@ if (!digitalRead(A0)) { //når knappen trykkes ned, kalles metoden
 else if (!digitalRead(A1)){
   knappTrykket(30);
 }
-else if (!digitalRead(A2)){
-  Serial.println("Pause aktivert");
-  pause();
-}
+else if (!digitalRead(A4)) {
+   knappTrykket(45);
+ }
+else if (!digitalRead(A5)) {
+   knappTrykket(60);
+ }
 if (valgtTid != 0){
  else if (!digitalRead(A3)){
    Serial.println("5 min lagt til");
    leggTilTid(5);
  }
- else if (!digitalRead(A4)) {
-   knappTrykket(45);
+ else if (!digitalRead(A2)){
+  Serial.println("Pause aktivert");
+  pause();
  }
 }
  
