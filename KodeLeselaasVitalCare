@@ -98,12 +98,14 @@ else if (!digitalRead(A2)){
   Serial.println("Pause aktivert");
   pause();
 }
-else if (!digitalRead(A3)){
-  Serial.println("5 min lagt til");
-  leggTilTid(5);
-}
-else if (!digitalRead(A4)) {
-  knappTrykket(45);
+if (valgtTid != 0){
+ else if (!digitalRead(A3)){
+   Serial.println("5 min lagt til");
+   leggTilTid(5);
+ }
+ else if (!digitalRead(A4)) {
+   knappTrykket(45);
+ }
 }
  
 if (tidIgjen > 0 && millis() - lastMinutt >= 60000) { //kjører hvert minutt, mens tidIgjen er større enn null
